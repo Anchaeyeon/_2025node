@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 //라우팅 설정
-app.get('/', (req, res) => {
+app.post('/swag', (req, res) => {
   res.send('Hello world!');
 })
 
