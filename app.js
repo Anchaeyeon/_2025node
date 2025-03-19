@@ -8,9 +8,10 @@ const app = express();
 app.use(express.json());
 
 //라우팅 설정
-app.post('/swag', (req, res) => {
-  res.send(req.body);
-})
+app.get('/swag/:person', (req, res) => {
+  const person = req.params.person;
+  res.status(200).send(person);
+});
 
 // 서버를 3000번 포트에서 실행
 app.listen(3000, () => {
