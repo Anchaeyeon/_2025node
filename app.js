@@ -4,9 +4,12 @@ const express = require('express');
 //Express 에플리케이션을 생성
 const app = express();
 
+// json 형태로 정보를 전달
+app.use(express.json());
+
 //라우팅 설정
 app.post('/swag', (req, res) => {
-  res.send('Hello world!');
+  res.send(req.body);
 })
 
 // 서버를 3000번 포트에서 실행
