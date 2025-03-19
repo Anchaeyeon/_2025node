@@ -7,19 +7,11 @@ const app = express();
 // json 형태로 정보를 전달
 app.use(express.json());
 
+//라우팅 파일 불러오기
+const swagRoutes = require('./routes/swag');
+
 //라우팅 설정
-app.get('/swag', (req, res) => {
-  res.status(200).send('Get swag');
-});
-
-app.post('/swag', (req, res) => {
-  res.status(200).send('Post swag');
-});
-
-app.get('/swag/:person', (req, res) => {
-  const person = req.params.person;
-  res.status(200).send(person);
-});
+app.use('/swag', swagRoutes);
 
 // 서버를 3000번 포트에서 실행
 app.listen(3000, () => {
