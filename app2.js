@@ -77,6 +77,10 @@ app.post('/travel', (req, res) => {
   });
 });
 
+app.get('/add-travel', (req, res)=> {
+  res.render('addTravel');
+});
+
 app.use((req, res) => {
   
 });
