@@ -5,18 +5,19 @@
     <title>여행지</title>
 </head>
 <body>
-    <h1>여행지 목록</h1>
-    <ul>
-        <% travelList.forEach(travel=> {%>
-            <li>
-                <a href="/travel/<%= travel.id %>"><%= travel.name %></a>
-                <a href="/travel/<%= travel.id %>/edit">수정</a>
-                <!-- <form action="/travel/<%= travel.id %>" method="DELETE">
-                    <button type="submit"></button>
-                </form> -->
-            </li>
-        <%}) %>
-    </ul>
+  <h1>여행지 목록</h1>
+  <ul>
+    <% travelList.forEach(travel=> {%>
+        <li>
+            <a href="/travel/<%= travel.id %>"><%= travel.name %></a>
+            <a href="/travel/<%= travel.id %>/edit">수정</a>
+            <form action="/travel/<%= travel.id %>?_method=DELETE" method="POST"
+                style="display: inline;">
+                <button type="submit">삭제</button>
+            </form>
+        </li>
+    <%}) %>
+  </ul>
     <a href="/add-travel">여행지 추가</a>
 </body>
 </html>
